@@ -1,10 +1,10 @@
-import { SET_RECORDS } from '../actions'
+import { FETCH_RECORDS_SUCCESS } from '../actions'
 
 const initialState = []
 
 function records (state = initialState, action) {
   switch (action.type) {
-    case SET_RECORDS:
+    case FETCH_RECORDS_SUCCESS:
       return action.records
     default:
       return state

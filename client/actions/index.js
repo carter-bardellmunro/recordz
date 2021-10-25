@@ -1,19 +1,27 @@
 import { getRecords } from '../apis/records'
 
-export const SET_RECORDS = 'SET_RECORDS'
+export const FETCH_RECORDS_PENDING = 'FETCH_RECORDS_PENDING'
+export const FETCH_RECORDS_SUCCESS = 'FETCH_RECORDS_SUCCESS'
 
-export function setRecords (records) {
+export function fetchRecordsPending () {
   return {
-    type: SET_RECORDS,
-    records
+    type: FETCH_RECORDS_PENDING
+  }
+}
+
+export function fetchRecordsSuccess (records) {
+  return {
+    type: FETCH_RECORDS_SUCCESS,
+    records: records
   }
 }
 
 export function fetchRecords () {
   return dispatch => {
+    dispatch(fetchRecordsPending())
     return getRecords()
-      .then(records => {
-        dispatch(setRecords(records))
+      .then((records) => {
+        dispatch(fetchRecordsSuccess(records))
         return null
       })
   }

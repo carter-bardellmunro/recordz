@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
-import { Route } from 'react-router-dom'
+import React from 'react'
+import { Route, Link } from 'react-router-dom'
 
-import Records from './Records'
+import RecordsList from './RecordsList'
+import Header from './Header'
 
 function App() {
 
   return (
     <div className='app'>
-      <Route path='/' component={Records} />
+      <Route path='/' component={Header} />
+      <Route exact path='/records' component={RecordsList} />
     </div>
   )
 }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { fetchRecords } from '../actions'
 
+import RecordListItem from "./RecordListItem"
+
 function Records(props) {
 
   useEffect(() => {
@@ -12,16 +14,14 @@ function Records(props) {
   return (
     <>
       <h1>Dusty Records</h1>
-      <ul>
-        {props.records.map(record => (
-          <>
-            <li key={record.artist}>{record.artist}</li>
-            <li key={record.album}>{record.album}</li>
-            <li key={record.year}>{record.year}</li>
-            <li key={record.price}>${record.price}</li>
-          </>
-        ))}
-      </ul>
+      {props.records.map(record => {
+        return (
+          <RecordListItem
+            key={record.id}
+            record={record}
+          />
+        )
+      })}
     </>
   )
 }

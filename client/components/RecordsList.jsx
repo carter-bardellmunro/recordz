@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { connect } from 'react-redux'
 
-import { fetchRecords } from '../actions'
+import { fetchRecords } from '../actions/records'
 
 import RecordListItem from "./RecordListItem"
 

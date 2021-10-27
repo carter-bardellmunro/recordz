@@ -15,7 +15,7 @@ export function addRecordSuccess (record) {
   }
 }
 
-export function addRecord (record) {
+export function addNewRecord (record) {
   return (dispatch) => {
     dispatch(addRecordPending())
     return addRecord(record)

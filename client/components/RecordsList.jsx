@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { fetchRecords } from '../actions/records'
 
@@ -13,6 +14,7 @@ function Records(props) {
 
   return (
     <>
+      <Link to="/"><h1>Home</h1></Link>
       <h1>Dusty Records</h1>
       {props.records.map(record => {
         return (

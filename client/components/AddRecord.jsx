@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { addNewRecord } from '../actions/addRecord'
 
-function addRecord() {
-  // console.log(props)
-
+function addRecord(props) {
   const [form, setForm] = useState({
     artist: '',
     album: '',
@@ -27,6 +26,7 @@ function addRecord() {
 
   return (
     <div>
+      <Link to="/"><h1>Home</h1></Link>
       <div>
         <h2>New stock? Add it below.</h2>
       </div>
@@ -56,7 +56,7 @@ function addRecord() {
             value={form.price} />
         </label>
         <button onClick={e => {
-          e.preventDefault()
+          // e.preventDefault()
           handleSubmit(form)
         }}>ADD RECORD</button>
       </form>

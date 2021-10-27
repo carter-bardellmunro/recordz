@@ -56,7 +56,6 @@ function addRecord(props) {
             value={form.price} />
         </label>
         <button onClick={e => {
-          // e.preventDefault()
           handleSubmit(form)
         }}>ADD RECORD</button>
       </form>

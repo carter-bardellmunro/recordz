@@ -8,3 +8,11 @@ export function getRecords () {
       return res.body
     })
 }
+
+export function addRecord (newRecord) {
+  return request.post(rootUrl + '/records')
+    .send(newRecord)
+    .then(res => {
+      return res.body
+    })
+}
